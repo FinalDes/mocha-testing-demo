@@ -1,9 +1,10 @@
-_ = require('lodash');
-alwaysTrue = () => true;
-legitString = (o) => _.isString(o);
+const _ = require('lodash');
+
+const alwaysTrue = () => true;
+const legitString = o => _.isString(o);
 
 module.exports = {
-    alwaysTrue,
-    legitString
-}
+  alwaysTrue,
+  legitString,
+};
 
