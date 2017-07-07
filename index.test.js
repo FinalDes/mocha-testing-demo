@@ -3,7 +3,10 @@ expect = require('chai').expect;
 should = require('chai').should();
 _ = require('lodash');
 
-const {alwaysTrue} = require("./index");
+const {
+    alwaysTrue,
+    legitString
+} = require("./index");
 
 describe('#mocha bascis',()=>{
     it('true should be true',()=>{
@@ -14,7 +17,7 @@ describe('#mocha bascis',()=>{
     });
 });
 
-describe('#always true',()=>{
+describe('#alwaysTrue',()=>{
     it('should always return true',()=>{
         alwaysTrue().should.be.true;
     });
@@ -28,5 +31,17 @@ describe('#always true',()=>{
     })
 });
 
+describe('#legitString',()=>{
+    it("should detect 'cow' as legit string",()=>{
+        legitString('cow').should.be.true;
+    });
 
+    it('4 is not legitString',()=>{
+        legitString(4).should.be.false;
+    });
+
+    it("undefined should be false",()=>{
+        legitString(undefined).should.be.false;
+    })
+})
 
