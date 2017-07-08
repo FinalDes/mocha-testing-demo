@@ -51,8 +51,41 @@ describe('#legitString', () => {
     legitString(undefined).should.be.false;
   });
 
+  it("'undefined' is a legit string",()=>{
+    legitString('undefined').should.be.true;
+  })
+
   it('null is not legit string', () => {
     legitString(null).should.be.false;
   });
+
+    it("'null' is a legit string",()=>{
+    legitString('null').should.be.true;
+  })
+
+  it("true is not legit string",() => {
+    legitString(true).should.be.false;
+  });
+
+  it("'true' is legit string",() => {
+    legitString("true").should.be.true;
+  });
+
+  it("false is not legit string",() => {
+    legitString(false).should.be.false;
+  });
+
+  it("'false' is legit string",() => {
+    legitString("false").should.be.true;
+  });
+
+  it("empty object is not legit string",() => {
+    legitString({}).should.be.false;
+  });
+
+  it("'{}' is not legit string",() => {
+    legitString('{}').should.be.true;
+  });
+
 });
 
