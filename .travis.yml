@@ -3,6 +3,12 @@ node_js:
   - "node"
   - "7"
   - "6"
+script:
+  - yarn
+  - yarn test
+  - yarn coverage
+after_success:
+  - yarn coveralls
 cache:
   yarn: true
   directories:
